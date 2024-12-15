@@ -57,11 +57,7 @@ with columns[1]:
             st.subheader(i)
             chart = (
                 alt.Chart(unemployment_df.loc[(unemployment_df["series"] == i)])
-                .mark_line()
-                .encode(
-                    x=alt.X("month", title="Mes", type="nominal"),
-                    y=alt.Y("rate", title="Tasa de desempleo", type="quantitative"),
-                    color=alt.Color("year", title="Año", type="nominal"),
+                .mark_line().encode(x=alt.X("month", title="Mes", type="nominal"),y=alt.Y("rate", title="Tasa de desempleo", type="quantitative"),               color=alt.Color("year", title="Año", type="nominal"),
                 )
             )
             st.altair_chart(chart, use_container_width=True)
